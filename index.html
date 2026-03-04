@@ -18,18 +18,23 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+
   /* NAV */
   nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--grey-border);padding:0 2rem;}
   .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
-  .nav-logo{font-weight:700;font-size:1.1rem;color:var(--navy);cursor:pointer;letter-spacing:-.3px;}
+  .nav-logo{font-weight:700;font-size:1.1rem;color:var(--navy);cursor:pointer;letter-spacing:-.3px;flex-shrink:0;}
   .nav-links{display:flex;gap:2rem;list-style:none;}
   .nav-links a{text-decoration:none;color:var(--grey);font-size:.95rem;font-weight:500;transition:color .2s;}
   .nav-links a:hover,.nav-links a.active{color:var(--blue);}
-  .nav-cta{background:var(--blue);color:var(--white);border:none;padding:.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s;}
+  .nav-cta{background:var(--blue);color:var(--white);border:none;padding:.5rem 1.2rem;border-radius:6px;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s;flex-shrink:0;}
   .nav-cta:hover{background:var(--navy);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.4rem;}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:all .2s;border-radius:2px;}
+
   /* PAGES */
   .page{display:none;min-height:calc(100vh - 64px);}
   .page.active{display:block;}
+
   /* HERO */
   .hero{background:linear-gradient(135deg,var(--blue-light) 0%,var(--white) 60%);padding:5rem 2rem 4rem;}
   .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
@@ -50,18 +55,21 @@
   .stat{flex:1;text-align:center;background:var(--blue-light);border-radius:10px;padding:1.2rem;}
   .stat-num{font-size:2rem;font-weight:800;color:var(--blue);}
   .stat-label{font-size:.8rem;color:var(--grey);font-weight:500;}
+
   /* SECTION */
   section{padding:4rem 2rem;}
   .section-inner{max-width:1100px;margin:0 auto;}
   .section-label{font-size:.8rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.5rem;}
   .section-title{font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:.6rem;}
   .section-sub{color:var(--grey);font-size:1rem;margin-bottom:2.5rem;max-width:600px;}
+
   /* BRANDS */
   .brands-section{background:var(--grey-light);padding:2.5rem 2rem;}
   .brands-inner{max-width:1100px;margin:0 auto;text-align:center;}
   .brands-label{font-size:.85rem;color:var(--grey);font-weight:500;margin-bottom:1.2rem;text-transform:uppercase;letter-spacing:.5px;}
   .brands-grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
   .brand-pill{background:var(--white);border:1px solid var(--grey-border);border-radius:8px;padding:.5rem 1.2rem;font-size:.9rem;font-weight:600;color:var(--navy);}
+
   /* SERVICES */
   .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;}
   .service-card{background:var(--white);border:1px solid var(--grey-border);border-radius:12px;padding:1.8rem;transition:box-shadow .2s,transform .2s;}
@@ -69,6 +77,7 @@
   .service-icon{font-size:2rem;margin-bottom:1rem;}
   .service-card h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;}
   .service-card p{font-size:.9rem;color:var(--grey);}
+
   /* PROCESS MINI */
   .process-steps{display:flex;gap:0;flex-wrap:wrap;margin-top:1rem;}
   .process-step{flex:1;min-width:160px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;padding:1.5rem 1rem;}
@@ -76,6 +85,7 @@
   .step-circle{width:48px;height:48px;border-radius:50%;background:var(--blue);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;margin-bottom:.8rem;}
   .process-step h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.3rem;}
   .process-step p{font-size:.82rem;color:var(--grey);}
+
   /* CASE STUDY CARDS */
   .cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
   .cs-card{background:var(--white);border:1px solid var(--grey-border);border-radius:12px;overflow:hidden;cursor:pointer;transition:box-shadow .2s,transform .2s;}
@@ -86,6 +96,14 @@
   .cs-card-body h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;}
   .cs-card-body p{font-size:.88rem;color:var(--grey);}
   .cs-card-footer{padding:1rem 1.5rem;border-top:1px solid var(--grey-border);font-size:.85rem;color:var(--blue);font-weight:600;}
+
+  /* ABOUT SECTION */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .about-stat{background:rgba(255,255,255,.08);border-radius:10px;padding:1.5rem;text-align:center;}
+  .about-stat-num{font-size:2rem;font-weight:800;color:#60a5fa;}
+  .about-stat-label{font-size:.85rem;color:rgba(255,255,255,.6);}
+
   /* EXPERIENCE PAGE */
   .timeline{position:relative;padding-left:2rem;}
   .timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--blue-mid);}
@@ -105,6 +123,7 @@
   .timeline-body ul{list-style:none;padding:0;}
   .timeline-body li{display:flex;gap:.6rem;margin-bottom:.4rem;font-size:.9rem;color:var(--text);}
   .timeline-body li::before{content:"▹";color:var(--blue);flex-shrink:0;}
+
   /* SKILLS */
   .skills-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
   .skill-tab{padding:.45rem 1rem;border-radius:20px;border:1px solid var(--grey-border);background:var(--white);font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--grey);}
@@ -112,6 +131,7 @@
   .skills-panel{display:none;}
   .skills-panel.active{display:flex;flex-wrap:wrap;gap:.6rem;}
   .skill-tag{background:var(--grey-light);border:1px solid var(--grey-border);border-radius:6px;padding:.35rem .8rem;font-size:.85rem;color:var(--navy);font-weight:500;}
+
   /* CERTS */
   .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:1rem;}
   .cert-card{background:var(--white);border:1px solid var(--grey-border);border-radius:10px;padding:1.2rem;display:flex;gap:1rem;align-items:flex-start;}
@@ -119,6 +139,7 @@
   .cert-org{font-size:.75rem;color:var(--grey);margin-bottom:.2rem;}
   .cert-name{font-size:.88rem;font-weight:700;color:var(--navy);}
   .cert-link{font-size:.8rem;color:var(--blue);text-decoration:none;}
+
   /* PROCESS PAGE */
   .process-phase{margin-bottom:2rem;}
   .phase-header{background:var(--navy);color:var(--white);padding:.8rem 1.5rem;border-radius:10px 10px 0 0;font-weight:700;font-size:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
@@ -131,12 +152,14 @@
   .process-card ul{list-style:none;padding:0;}
   .process-card li{font-size:.85rem;color:var(--grey);display:flex;gap:.4rem;}
   .process-card li::before{content:"✓";color:var(--blue);}
+
   /* ROADMAP */
   .roadmap-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:1.5rem;}
   .roadmap-card{background:var(--white);border:1px solid var(--grey-border);border-radius:10px;padding:1.5rem;}
   .roadmap-num{font-size:2rem;font-weight:800;color:var(--blue-mid);margin-bottom:.5rem;}
   .roadmap-card h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;}
   .roadmap-card p{font-size:.85rem;color:var(--grey);}
+
   /* CONTACT */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
   .contact-info h2{font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:1rem;}
@@ -150,6 +173,7 @@
   .form-group input,.form-group textarea,.form-group select{width:100%;padding:.7rem 1rem;border:1px solid var(--grey-border);border-radius:7px;font-size:.9rem;outline:none;background:var(--white);transition:border-color .2s;}
   .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--blue);}
   .form-group textarea{min-height:120px;resize:vertical;}
+
   /* WINNERS */
   .winners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;}
   .winner-card{background:var(--white);border:1px solid var(--grey-border);border-radius:10px;padding:1.5rem;transition:box-shadow .2s;}
@@ -158,23 +182,93 @@
   .winner-card h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;}
   .winner-card p{font-size:.85rem;color:var(--grey);}
   .winner-tag{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;margin-bottom:.6rem;}
+
   /* FOOTER */
   footer{background:var(--navy);color:var(--white);padding:2.5rem 2rem;margin-top:4rem;}
-  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
   .footer-logo{font-weight:700;font-size:1rem;}
   .footer-sub{font-size:.85rem;opacity:.6;}
-  .footer-links{display:flex;gap:1.5rem;list-style:none;}
+  .footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap;}
   .footer-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.88rem;transition:color .2s;}
   .footer-links a:hover{color:var(--white);}
+
   /* UTILS */
   .divider{height:1px;background:var(--grey-border);margin:3rem 0;}
   .text-blue{color:var(--blue);}
   .mb2{margin-bottom:2rem;}
+
+  /* ── RESPONSIVE ── */
   @media(max-width:768px){
-    .hero-inner,.contact-grid{grid-template-columns:1fr;}
+    /* Nav mobile */
+    .nav-hamburger{display:flex;}
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:64px;
+      left:0;
+      right:0;
+      background:var(--white);
+      border-bottom:1px solid var(--grey-border);
+      flex-direction:column;
+      padding:1rem 2rem;
+      gap:1rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+    .nav-links.open{display:flex;}
+    .nav-cta{display:none;}
+
+    /* Hero */
+    .hero{padding:3rem 1.25rem 2.5rem;}
+    .hero-inner{grid-template-columns:1fr;gap:2rem;}
     .hero h1{font-size:2rem;}
+
+    /* Stat row in hero box */
+    .stat-row{flex-direction:column;gap:1rem;}
+
+    /* Sections */
+    section{padding:3rem 1.25rem;}
+    .brands-section{padding:2rem 1.25rem;}
+
+    /* Process steps */
+    .process-steps{flex-direction:column;align-items:center;}
+    .process-step{width:100%;max-width:320px;}
     .process-step:not(:last-child)::after{display:none;}
-    .stat-row{flex-direction:column;}
+
+    /* About grid */
+    .about-grid{grid-template-columns:1fr;}
+    .about-stats{grid-template-columns:1fr 1fr;}
+
+    /* Contact */
+    .contact-grid{grid-template-columns:1fr;}
+
+    /* Footer */
+    .footer-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
+    .footer-links{gap:1rem;}
+
+    /* Section titles */
+    .section-title{font-size:1.6rem;}
+
+    /* Timeline */
+    .timeline{padding-left:1.5rem;}
+    .tl-top{flex-direction:column;gap:.4rem;}
+
+    /* Skills tabs */
+    .skill-tab{font-size:.8rem;padding:.4rem .8rem;}
+
+    /* Cert grid */
+    .cert-grid{grid-template-columns:1fr;}
+
+    /* CS grid */
+    .cs-grid{grid-template-columns:1fr;}
+    .winners-grid{grid-template-columns:1fr;}
+  }
+
+  @media(max-width:480px){
+    .hero h1{font-size:1.7rem;}
+    .about-stats{grid-template-columns:1fr 1fr;}
+    nav{padding:0 1.25rem;}
+    .section-title{font-size:1.4rem;}
+    .hero-img-box{padding:1.25rem;}
   }
 </style>
 </head>
@@ -183,13 +277,16 @@
 <nav>
   <div class="nav-inner">
     <span class="nav-logo" onclick="showPage('home')">Jordan's CRO Studio</span>
-    <ul class="nav-links">
-      <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-      <li><a href="#" onclick="showPage('experience')" id="nav-experience">Experience</a></li>
-      <li><a href="#" onclick="showPage('case-studies')" id="nav-case-studies">Case Studies</a></li>
-      <li><a href="#" onclick="showPage('process')" id="nav-process">My Process</a></li>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#" onclick="showPage('home');closeMobileNav()" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('experience');closeMobileNav()" id="nav-experience">Experience</a></li>
+      <li><a href="#" onclick="showPage('case-studies');closeMobileNav()" id="nav-case-studies">Case Studies</a></li>
+      <li><a href="#" onclick="showPage('process');closeMobileNav()" id="nav-process">My Process</a></li>
     </ul>
     <button class="nav-cta" onclick="showPage('contact')">Get in touch</button>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -204,7 +301,7 @@
         <h1>Conversion Rate Optimization that <span>actually moves the needle</span></h1>
         <p>Data-driven experimentation, UX research, and growth strategy — built for measurable, scalable results.</p>
         <ul class="hero-bullets">
-          <li>Combine UX & competitive research with analytics</li>
+          <li>Combine UX &amp; competitive research with analytics</li>
           <li>Maximize impact with varied activity types and targeting</li>
           <li>Continuously learn and improve</li>
         </ul>
@@ -219,7 +316,7 @@
           <div class="stat"><div class="stat-num">250+</div><div class="stat-label">Experiments Run</div></div>
         </div>
         <div style="background:var(--blue-light);border-radius:10px;padding:1.5rem;width:100%;text-align:center;">
-          <div style="font-size:.85rem;color:var(--grey);margin-bottom:.8rem;font-weight:600;">EXPERIENCE WITH MAJOR BRANDS</div>
+          <div style="font-size:.85rem;color:var(--grey);margin-bottom:.8rem;font-weight:600;">EXPERIENCE WITH MAJOR BRANDS LIKE</div>
           <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;">
             <span class="brand-pill">UnitedHealthcare</span>
             <span class="brand-pill">DeVry</span>
@@ -258,12 +355,12 @@
   <section>
     <div class="section-inner">
       <div class="section-label">What I do</div>
-      <div class="section-title">End-to-end CRO services</div>
+      <div class="section-title">End-to-end CRO skills</div>
       <div class="section-sub">Research, experimentation, optimization, and scaling — backed by data and real user insights.</div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">🔍</div>
-          <h3>UX & Research</h3>
+          <h3>UX &amp; Research</h3>
           <p>Qualitative and quantitative research to uncover friction points and opportunity areas across your funnel.</p>
         </div>
         <div class="service-card">
@@ -278,7 +375,7 @@
         </div>
         <div class="service-card">
           <div class="service-icon">📈</div>
-          <h3>Analysis & Scale</h3>
+          <h3>Analysis &amp; Scale</h3>
           <p>Actionable insights and a roadmap for scaled growth across channels, backed by validated learnings.</p>
         </div>
       </div>
@@ -295,27 +392,17 @@
         <div class="process-step">
           <div class="step-circle">1</div>
           <h4>Discover</h4>
-          <p>Analytics audit & user research</p>
+          <p>Analytics audit &amp; user research</p>
         </div>
         <div class="process-step">
           <div class="step-circle">2</div>
-          <h4>Hypothesize</h4>
-          <p>Roadmap & ICE prioritization</p>
+          <h4>Design</h4>
+          <p>Experiments &amp; prototypes</p>
         </div>
         <div class="process-step">
           <div class="step-circle">3</div>
-          <h4>Design</h4>
-          <p>Experiments & prototypes</p>
-        </div>
-        <div class="process-step">
-          <div class="step-circle">4</div>
-          <h4>Test</h4>
-          <p>A/B testing & rollout</p>
-        </div>
-        <div class="process-step">
-          <div class="step-circle">5</div>
-          <h4>Learn</h4>
-          <p>Report, share & repeat</p>
+          <h4>Deliver</h4>
+          <p>A/B testing &amp; rollout</p>
         </div>
       </div>
       <div style="margin-top:2rem;">
@@ -367,32 +454,34 @@
 
   <!-- ABOUT -->
   <section style="background:var(--navy);">
-    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
-      <div>
-        <div class="section-label" style="color:var(--blue-mid);">About me</div>
-        <h2 style="font-size:2rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Data-driven CRO & marketing expert</h2>
-        <p style="color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:1.5rem;">I'm a data-driven CRO and marketing expert with experience in conversion rate optimization, strategy, analytics, tagging, website personalization, and paid media. I'm obsessed with measurable results and building long-term growth systems.</p>
-        <div class="btn-row">
-          <button class="btn-primary" onclick="showPage('contact')">Submit a request</button>
-          <button onclick="window.open('mailto:jordanshapiro555@gmail.com')" style="background:transparent;color:rgba(255,255,255,.8);padding:.7rem 1.5rem;border-radius:7px;font-weight:600;font-size:.95rem;cursor:pointer;border:2px solid rgba(255,255,255,.3);transition:all .2s;">Email me</button>
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <div class="section-label" style="color:var(--blue-mid);">About me</div>
+          <h2 style="font-size:2rem;font-weight:800;color:var(--white);margin-bottom:1rem;">Data-driven CRO &amp; marketing expert</h2>
+          <p style="color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:1.5rem;">Data-driven CRO and marketing expert with past experience in conversion rate optimization, strategy, analytics, tagging, website personalization and even paid media (Programmatic native display &amp; affiliate). Obsessed with measurable results and building long-term growth systems.</p>
+          <div class="btn-row">
+            <button class="btn-primary" onclick="showPage('contact')">Submit a request</button>
+            <button onclick="window.open('mailto:jordanshapiro555@gmail.com')" style="background:transparent;color:rgba(255,255,255,.8);padding:.7rem 1.5rem;border-radius:7px;font-weight:600;font-size:.95rem;cursor:pointer;border:2px solid rgba(255,255,255,.3);transition:all .2s;">Email me</button>
+          </div>
         </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:1.5rem;text-align:center;">
-          <div style="font-size:2rem;font-weight:800;color:#60a5fa;">450%</div>
-          <div style="font-size:.85rem;color:rgba(255,255,255,.6);">Avg Program ROI</div>
-        </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:1.5rem;text-align:center;">
-          <div style="font-size:2rem;font-weight:800;color:#60a5fa;">250+</div>
-          <div style="font-size:.85rem;color:rgba(255,255,255,.6);">Experiments Run</div>
-        </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:1.5rem;text-align:center;">
-          <div style="font-size:2rem;font-weight:800;color:#60a5fa;">8+</div>
-          <div style="font-size:.85rem;color:rgba(255,255,255,.6);">Major Brands</div>
-        </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:1.5rem;text-align:center;">
-          <div style="font-size:2rem;font-weight:800;color:#60a5fa;">1061%</div>
-          <div style="font-size:.85rem;color:rgba(255,255,255,.6);">Best Program ROI</div>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">450%</div>
+            <div class="about-stat-label">Avg Program ROI</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">250+</div>
+            <div class="about-stat-label">Experiments Run</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">8+</div>
+            <div class="about-stat-label">Major Brands</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">1061%</div>
+            <div class="about-stat-label">Best Program ROI</div>
+          </div>
         </div>
       </div>
     </div>
@@ -402,7 +491,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">Jordan's CRO Studio</div>
-        <div class="footer-sub">Optimization & experimentation agency</div>
+        <div class="footer-sub">Optimization &amp; experimentation agency</div>
       </div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('experience')">Experience</a></li>
@@ -446,18 +535,18 @@
                 <div class="tl-company">Horizon Commerce</div>
               </div>
               <div style="text-align:right;">
-                <div class="tl-date">Recent</div>
+                <div class="tl-date">September 2024 – Present</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Led CRO strategy and execution across multiple enterprise client accounts</li>
-              <li>Managed cross-functional teams of designers, developers, and analysts</li>
-              <li>Delivered 450%+ average program ROI across client portfolio</li>
-              <li>Oversaw 250+ experiments with rigorous A/B testing methodology</li>
-              <li>Developed roadmaps, ICE-scored backlogs, and executive-level reporting</li>
+              <li>Built cross-functional strategizing processes across CRO, design, dev, and analytics</li>
+              <li>Achieved over 1,000% average ROI in web optimization across client portfolio</li>
+              <li>Introduced novel CRO attribution modeling to better capture program value</li>
+              <li>Increased A/B/n testing velocity by 50%+ through process improvements</li>
+              <li>Improved program reach by 103% year-over-year</li>
             </ul>
           </div>
         </div>
@@ -471,16 +560,18 @@
                 <div class="tl-company">Horizon Commerce</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">February 2023 – September 2024</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Supervised CRO programs for healthcare, retail, and education clients</li>
+              <li>Improved primary KPIs by 12%+ quarterly across healthcare, retail, and education clients</li>
+              <li>Aligned user journeys to higher-value conversions, driving a 208% increase</li>
+              <li>Generated up to $2.2MM incremental revenue in a single test</li>
               <li>Built and maintained testing pipelines using Optimizely and Adobe Target</li>
               <li>Mentored junior team members on experimentation best practices</li>
-              <li>Collaborated with UX, creative, and dev teams to deliver winning concepts</li>
             </ul>
           </div>
         </div>
@@ -494,14 +585,15 @@
                 <div class="tl-company">Hear.com</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">December 2022 – February 2023</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Managed affiliate partnerships and performance marketing programs</li>
-              <li>Optimized affiliate funnels to improve conversion rates and revenue</li>
+              <li>Managed 12 affiliate partners with a combined spend of ~$500K monthly</li>
+              <li>Reduced CPA by ~20% (from ~$480 to ~$400) through targeting and funnel optimization</li>
               <li>Tracked and reported on KPIs using Domo and Google Analytics</li>
             </ul>
           </div>
@@ -516,15 +608,16 @@
                 <div class="tl-company">Hear.com</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">July 2022 – February 2023</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
+              <li>Scaled Outbrain channel from $65K to $900K in monthly revenue</li>
+              <li>Decreased cost-of-revenue from 75% to 35% through audience and creative optimization</li>
               <li>Managed native and programmatic display campaigns via Taboola and Outbrain</li>
-              <li>Scaled spend while maintaining target CPAs and lead quality standards</li>
-              <li>Developed audience targeting strategies to reduce wasteful spend</li>
             </ul>
           </div>
         </div>
@@ -538,14 +631,16 @@
                 <div class="tl-company">Hear.com</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">May 2022 – February 2023</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Owned CRO roadmap and experimentation program for Hear.com digital properties</li>
-              <li>Ran A/B and multivariate tests on landing pages, lead forms, and checkout flows</li>
+              <li>Ran and analyzed 100+ Optimizely tests on landing pages, lead forms, and checkout flows</li>
+              <li>Earned 25%+ CVR increases quarterly through hypothesis-driven experimentation</li>
+              <li>Increased lead value by 60% for low-value customer segments</li>
               <li>Used Hotjar, Mouseflow, and Quantum Metrics for user behavior analysis</li>
             </ul>
           </div>
@@ -556,18 +651,19 @@
           <div class="timeline-header" onclick="toggleTimeline(this)">
             <div class="tl-top">
               <div>
-                <div class="tl-title">Product Analyst & Loyalty Program Manager</div>
+                <div class="tl-title">Product Analyst &amp; Loyalty Program Manager</div>
                 <div class="tl-company">Hear.com</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">February 2021 – May 2022</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Analyzed product performance data to identify growth opportunities</li>
-              <li>Launched and managed a customer loyalty program to drive retention</li>
+              <li>Created a lead scoring equation that increased revenue by 16% month-over-month</li>
+              <li>Built a repurchase program generating $250,000 in monthly net revenue</li>
               <li>Collaborated with product and UX teams on feature prioritization</li>
             </ul>
           </div>
@@ -582,14 +678,15 @@
                 <div class="tl-company">Lula</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">August 2019 – August 2020</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Led new market pilot program from launch to evaluation</li>
-              <li>Built business processes and workflows for operational efficiency</li>
+              <li>Built customer acquisition funnel via app sign-ups and local marketing campaigns</li>
+              <li>Managed mobile app marketing through Mixpanel</li>
               <li>Reported on pilot KPIs and made data-driven recommendations for scaling</li>
             </ul>
           </div>
@@ -604,14 +701,15 @@
                 <div class="tl-company">LifeVantage Corporation</div>
               </div>
               <div style="text-align:right;">
+                <div class="tl-date">January 2018 – December 2018</div>
                 <div class="tl-chevron">▼</div>
               </div>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Drove business development and sales enablement initiatives</li>
-              <li>Developed growth strategies and trained team members on sales processes</li>
+              <li>Marketed products to healthcare professionals and drove business development</li>
+              <li>Recruited and trained new managers on sales processes and growth strategies</li>
             </ul>
           </div>
         </div>
@@ -627,7 +725,7 @@
         <div style="font-size:2.5rem;">🎓</div>
         <div>
           <div style="font-weight:700;color:var(--navy);font-size:1rem;">Bachelor of Business Administration (BBA)</div>
-          <div style="color:var(--blue);font-size:.9rem;margin:.3rem 0;">Marketing & Public Relations / Image Management</div>
+          <div style="color:var(--blue);font-size:.9rem;margin:.3rem 0;">Marketing &amp; Public Relations / Image Management</div>
           <div style="color:var(--grey);font-size:.88rem;">2016–2020 &nbsp;·&nbsp; GPA: 3.9, Magna Cum Laude</div>
         </div>
       </div>
@@ -635,14 +733,14 @@
       <div class="divider"></div>
 
       <!-- CERTS -->
-      <div class="section-label">Licenses & Certifications</div>
+      <div class="section-label">Licenses &amp; Certifications</div>
       <div class="section-title mb2">Professional Credentials</div>
       <div class="cert-grid">
         <div class="cert-card"><div class="cert-icon">🤖</div><div><div class="cert-org">Section</div><div class="cert-name">AI Crash Course</div><a class="cert-link" href="https://www.credly.com/badges/0dee1f00-dd34-44c8-adf7-5a561dd43ccf/public_url" target="_blank">View credential ↗</a></div></div>
         <div class="cert-card"><div class="cert-icon">🤖</div><div><div class="cert-org">Section</div><div class="cert-name">AI For Marketers</div><a class="cert-link" href="https://www.credly.com/badges/4e94cc21-f8fd-4f76-ba01-e210ce0eea58" target="_blank">View credential ↗</a></div></div>
         <div class="cert-card"><div class="cert-icon">🤖</div><div><div class="cert-org">Section</div><div class="cert-name">AI For Problem Solving</div><a class="cert-link" href="https://www.credly.com/badges/a6c1b97b-27eb-4562-b1bb-8e28b8102fc8/public_url" target="_blank">View credential ↗</a></div></div>
         <div class="cert-card"><div class="cert-icon">🤖</div><div><div class="cert-org">Section</div><div class="cert-name">AI Proficiency</div><a class="cert-link" href="https://www.credly.com/badges/f5cd76d4-02aa-4613-a5e9-ec3e4bceb49d/public_url" target="_blank">View credential ↗</a></div></div>
-        <div class="cert-card"><div class="cert-icon">💻</div><div><div class="cert-org">Coursera</div><div class="cert-name">HTML, CSS & JavaScript</div><a class="cert-link" href="https://www.credly.com/badges/727e41a3-5dc3-442a-b4cb-cc1e380ee96e/linked_in_profile" target="_blank">View credential ↗</a></div></div>
+        <div class="cert-card"><div class="cert-icon">💻</div><div><div class="cert-org">Coursera</div><div class="cert-name">HTML, CSS &amp; JavaScript</div><a class="cert-link" href="https://www.credly.com/badges/727e41a3-5dc3-442a-b4cb-cc1e380ee96e/linked_in_profile" target="_blank">View credential ↗</a></div></div>
         <div class="cert-card"><div class="cert-icon">📊</div><div><div class="cert-org">Google</div><div class="cert-name">Google Analytics Certification</div><a class="cert-link" href="https://skillshop.exceedlms.com/profiles/0da0a2d6ac864a95b8849667a3d3c3cf" target="_blank">View credential ↗</a></div></div>
         <div class="cert-card"><div class="cert-icon">📧</div><div><div class="cert-org">HubSpot Academy</div><div class="cert-name">Email Marketing Certified</div></div></div>
         <div class="cert-card"><div class="cert-icon">📡</div><div><div class="cert-org">Horizon Media</div><div class="cert-name">Blue Platform Angel</div><a class="cert-link" href="https://www.linkedin.com/in/jordan-shapiro-797315153/details/certifications/" target="_blank">View credential ↗</a></div></div>
@@ -660,7 +758,7 @@
         <button class="skill-tab" onclick="showSkills('certified',this)">🏅 Certified</button>
       </div>
       <div class="skills-panel active" id="skills-computer">
-        <span class="skill-tag">Domo</span><span class="skill-tag">Optimizely</span><span class="skill-tag">Salesforce</span><span class="skill-tag">Google Analytics</span><span class="skill-tag">Adobe Analytics</span><span class="skill-tag">Adobe Target</span><span class="skill-tag">Google Tag Manager</span><span class="skill-tag">Qualtrics</span><span class="skill-tag">Mixpanel</span><span class="skill-tag">Quantum Metrics</span><span class="skill-tag">Taboola</span><span class="skill-tag">Outbrain</span><span class="skill-tag">Hotjar</span><span class="skill-tag">Mouseflow</span><span class="skill-tag">Klaviyo</span><span class="skill-tag">Shopify</span><span class="skill-tag">MozPro</span><span class="skill-tag">GitHub</span><span class="skill-tag">HTML & CSS</span>
+        <span class="skill-tag">Domo</span><span class="skill-tag">Optimizely</span><span class="skill-tag">Salesforce</span><span class="skill-tag">Google Analytics</span><span class="skill-tag">Adobe Analytics</span><span class="skill-tag">Adobe Target</span><span class="skill-tag">Google Tag Manager</span><span class="skill-tag">Qualtrics</span><span class="skill-tag">Mixpanel</span><span class="skill-tag">Quantum Metrics</span><span class="skill-tag">Taboola</span><span class="skill-tag">Outbrain</span><span class="skill-tag">Hotjar</span><span class="skill-tag">Mouseflow</span><span class="skill-tag">Klaviyo</span><span class="skill-tag">Shopify</span><span class="skill-tag">MozPro</span><span class="skill-tag">GitHub</span><span class="skill-tag">HTML &amp; CSS</span>
       </div>
       <div class="skills-panel" id="skills-marketing">
         <span class="skill-tag">Conversion Rate Optimization</span><span class="skill-tag">Programmatic Display</span><span class="skill-tag">Native Display Advertising</span><span class="skill-tag">Affiliate Marketing</span><span class="skill-tag">Customer Retention</span><span class="skill-tag">Sales Enablement</span><span class="skill-tag">Data Analysis</span><span class="skill-tag">Growth Marketing</span><span class="skill-tag">Email Campaigns</span><span class="skill-tag">Performance Marketing</span><span class="skill-tag">Digital Strategy</span><span class="skill-tag">Product Management</span>
@@ -669,14 +767,14 @@
         <span class="skill-tag">Workflow Optimization</span><span class="skill-tag">Workflow Automation</span><span class="skill-tag">Business Process Creation</span><span class="skill-tag">Business Process Improvement</span><span class="skill-tag">People Management</span><span class="skill-tag">Cross-Department Collaboration</span><span class="skill-tag">Growth Planning</span><span class="skill-tag">Training</span>
       </div>
       <div class="skills-panel" id="skills-certified">
-        <span class="skill-tag">Google Analytics</span><span class="skill-tag">HTML, CSS & JavaScript</span><span class="skill-tag">Google Ads Measurement</span><span class="skill-tag">HubSpot Content Marketing</span><span class="skill-tag">Blue Platform Angel</span><span class="skill-tag">AI For Marketing</span><span class="skill-tag">AI For Problem Solving</span>
+        <span class="skill-tag">Google Analytics</span><span class="skill-tag">HTML, CSS &amp; JavaScript</span><span class="skill-tag">Google Ads Measurement</span><span class="skill-tag">HubSpot Content Marketing</span><span class="skill-tag">Blue Platform Angel</span><span class="skill-tag">AI For Marketing</span><span class="skill-tag">AI For Problem Solving</span>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-inner">
-      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization & experimentation agency</div></div>
+      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization &amp; experimentation agency</div></div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('experience')">Experience</a></li>
         <li><a href="#" onclick="showPage('case-studies')">Case Studies</a></li>
@@ -768,7 +866,7 @@
 
   <footer>
     <div class="footer-inner">
-      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization & experimentation agency</div></div>
+      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization &amp; experimentation agency</div></div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('experience')">Experience</a></li>
         <li><a href="#" onclick="showPage('case-studies')">Case Studies</a></li>
@@ -815,7 +913,7 @@
               <h4>Input</h4>
               <ul>
                 <li>Strategic business priorities</li>
-                <li>Analysis (audits, analytics & deep dives)</li>
+                <li>Analysis (audits, analytics &amp; deep dives)</li>
                 <li>CVR not hitting target benchmarks</li>
               </ul>
             </div>
@@ -894,7 +992,7 @@
               <h4>Tech QA</h4>
               <ul>
                 <li>Add QA params to test targeting</li>
-                <li>Tech QA & stakeholder review</li>
+                <li>Tech QA &amp; stakeholder review</li>
               </ul>
             </div>
           </div>
@@ -904,7 +1002,7 @@
       <!-- RUN & ANALYZE -->
       <div class="process-phase">
         <div class="phase-header" onclick="togglePhase(this)">
-          <span>📊 Run & Analyze</span><span>▼</span>
+          <span>📊 Run &amp; Analyze</span><span>▼</span>
         </div>
         <div class="phase-body">
           <div class="process-card">
@@ -924,7 +1022,7 @@
           <div class="process-card">
             <div class="process-emoji">⏸️</div>
             <div>
-              <h4>Pause & Analyze</h4>
+              <h4>Pause &amp; Analyze</h4>
               <ul>
                 <li>Check for statistical significance at regular intervals</li>
                 <li>Test runs until stat sig or 30 days</li>
@@ -934,7 +1032,7 @@
           <div class="process-card">
             <div class="process-emoji">📝</div>
             <div>
-              <h4>Report & Share</h4>
+              <h4>Report &amp; Share</h4>
               <ul>
                 <li>Win / loss assessment with deep dives as needed</li>
                 <li>Create presentation for results distribution</li>
@@ -957,12 +1055,12 @@
         </div>
         <div class="roadmap-card">
           <div class="roadmap-num">02</div>
-          <h4>External Trends & Opportunity Audit</h4>
+          <h4>External Trends &amp; Opportunity Audit</h4>
           <p>Overview of the current market, potential changes, and competitor behavior to stay ahead in the industry.</p>
         </div>
         <div class="roadmap-card">
           <div class="roadmap-num">03</div>
-          <h4>Internal Performance & Opportunity Audit</h4>
+          <h4>Internal Performance &amp; Opportunity Audit</h4>
           <p>How are current actions supporting goals, and how can we improve those activities or add new ones to enhance performance?</p>
         </div>
         <div class="roadmap-card">
@@ -976,7 +1074,7 @@
 
   <footer>
     <div class="footer-inner">
-      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization & experimentation agency</div></div>
+      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization &amp; experimentation agency</div></div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('experience')">Experience</a></li>
         <li><a href="#" onclick="showPage('case-studies')">Case Studies</a></li>
@@ -1011,11 +1109,11 @@
           <div style="margin-top:2rem;background:var(--blue-light);border-radius:12px;padding:1.5rem;">
             <div style="font-weight:700;color:var(--navy);margin-bottom:.5rem;">What I can help with:</div>
             <ul style="list-style:none;padding:0;">
-              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>CRO program strategy & roadmapping</li>
-              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>A/B testing & experimentation</li>
-              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>UX research & analytics audits</li>
-              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>Personalization & audience targeting</li>
-              <li style="display:flex;gap:.5rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>Performance marketing & affiliate</li>
+              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>CRO program strategy &amp; roadmapping</li>
+              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>A/B testing &amp; experimentation</li>
+              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>UX research &amp; analytics audits</li>
+              <li style="display:flex;gap:.5rem;margin-bottom:.4rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>Personalization &amp; audience targeting</li>
+              <li style="display:flex;gap:.5rem;font-size:.9rem;color:var(--grey);"><span style="color:var(--blue);">✓</span>Performance marketing &amp; affiliate</li>
             </ul>
           </div>
         </div>
@@ -1036,7 +1134,7 @@
             <label>What are you looking for?</label>
             <select>
               <option>CRO Program Strategy</option>
-              <option>A/B Testing & Experimentation</option>
+              <option>A/B Testing &amp; Experimentation</option>
               <option>Analytics Audit</option>
               <option>Personalization</option>
               <option>Performance Marketing</option>
@@ -1055,7 +1153,7 @@
 
   <footer>
     <div class="footer-inner">
-      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization & experimentation agency</div></div>
+      <div><div class="footer-logo">Jordan's CRO Studio</div><div class="footer-sub">Optimization &amp; experimentation agency</div></div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('experience')">Experience</a></li>
         <li><a href="#" onclick="showPage('case-studies')">Case Studies</a></li>
@@ -1075,6 +1173,19 @@ function showPage(id) {
   const navEl = document.getElementById('nav-' + id);
   if (navEl) navEl.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+  closeMobileNav();
+}
+
+function toggleMobileNav() {
+  const menu = document.getElementById('nav-menu');
+  const btn = document.getElementById('hamburger');
+  const isOpen = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+function closeMobileNav() {
+  document.getElementById('nav-menu').classList.remove('open');
+  document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
 }
 
 function toggleTimeline(header) {
