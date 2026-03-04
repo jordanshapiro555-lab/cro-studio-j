@@ -1,0 +1,408 @@
+
+/**************************************
+  SECTION WRAPPER
+**************************************/
+.experienceHero {
+  background: #eef4ff;
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.experienceHero_container {
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+
+/**************************************
+  TEXT SIDE
+**************************************/
+.experienceHero_text {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.experienceHero_tag {
+  background: #e0eaff;
+  color: #2550d0;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Inter, sans-serif;
+  width: fit-content;
+}
+
+.experienceHero_title {
+  font-size: 52px;
+  line-height: 1.1;
+  font-family: "DM Serif Text", serif;
+  margin: 0;
+  color: #0f172a;
+}
+
+.experienceHero_subtitle {
+  font-size: 18px;
+  line-height: 1.55;
+  color: #475569;
+  font-family: Inter, sans-serif;
+}
+
+.experienceHero_buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.experienceHero_btnPrimary {
+  background: #2550d0;
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  transition: background 0.25s ease;
+}
+
+.experienceHero_btnSecondary {
+  background: #fff;
+  color: #2550d0;
+  border-color: #2550d0;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  transition: background 0.25s ease;
+}
+
+.experienceHero_btnPrimary:hover {
+  background: #1a3aa5;
+}
+
+.experienceHero_btnSecondary {
+  border: 2px solid #2550d0;
+  color: #2550d0;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  transition: 0.25s ease;
+}
+
+.experienceHero_btnSecondary:hover {
+  background: #e7efff;
+}
+
+
+/**************************************
+  IMAGE GRID — EXACTLY LIKE EXTERN
+**************************************/
+.experienceHero_images {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.experienceHero_col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* RIGHT column offset (Extern signature look) */
+.experienceHero_col2 {
+  margin-top: 3.5rem;
+}
+
+/* Image cards */
+.experienceHero_imgCard {
+  width: 200px;
+  height: 200px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f0f0f0;
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.7s ease-out;
+}
+
+.experienceHero_imgCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/**************************************
+  SCROLL ANIMATION
+**************************************/
+.experienceHero_imgCard.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/**************************************
+  MOBILE LAYOUT
+**************************************/
+@media (max-width: 950px) {
+  .experienceHero_container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .experienceHero_buttons {
+    justify-content: center;
+  }
+
+  .experienceHero_images {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .experienceHero_col,
+  .experienceHero_col2 {
+    margin: 0;
+  }
+
+  .experienceHero_imgCard {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (min-width: 550px) {
+  .experienceBodyEmployerLogo {
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+/* MOBILE: stack layout */
+@media (max-width: 549px) {
+  .experienceBodyEmployerLogo {
+    float: none;
+    margin: 0 auto 20px;
+    display: block;
+  }
+}
+
+/* LOGO */
+.experienceBodyEmployerLogo {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+ 
+.experienceMainContent {
+  padding: 16px;
+}
+
+.workExperienceRow {
+  overflow: hidden; /* ensures float is contained */
+  line-height: 1.55;
+  padding: 0 48px;
+}
+
+/* No-bullet items (titles) */
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.experienceList {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.licensesAndCertifications {
+  display: flex;
+}
+
+@media (min-width: 1081px), (min-width: 500px) and (max-width: 699px) {
+.licensesAndCertificationsRow {
+  display: flex;
+}
+}
+
+@media (min-width: 1081px) {
+.licensesAndCertificationsRow {
+  padding: 16px 0;
+}
+}
+
+.certLogo {
+  border-radius: 20px;
+}
+
+@media (min-width: 700px) and (max-width: 1080px) {
+  .licensesAndCertificationsRow {
+  flex-direction: column;
+  }
+}
+
+@media (min-width: 700px) {
+  .licensesAndCertificationsRow {
+  width: 50%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .certLogo {
+  width: 180px;
+  height: 180px;
+  }
+}
+
+@media (max-width: 699px) {
+.licensesAndCertifications {
+  flex-direction: column;
+}
+}
+
+.skillsTableItem {
+  width: 25%;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #D5FFFF;
+}
+
+.skillsTableItem, .skillsTableHeadRow {
+  border: 1px solid #000;
+}
+
+.skillsTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.skillsTableHeadRow {
+  background-color: var(--accent-2);
+  color: #fff;
+  padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+.skillsTable {
+  display:none
+}
+  .mobileSkillParent {
+    border: solid 1px;
+    border-color: #000;
+    border-radius: 20px;
+    padding: 16px;
+    cursor: pointer;
+    margin: 16px;
+  }
+  .mobileSkillParent ::after {
+    content: ">";
+    position: absolute;
+    right: 32px;
+    color: #0f6cff;
+  }
+  .skillsTableMobile {
+      font-weight: 600;
+  }
+  .skillsTableMobile > summary::-webkit-details-marker {
+  display: none;
+}
+  .mobileSkillsMobileList {
+    padding: 12px 24px;
+    background-color: aliceblue;
+    border-radius: 24px;
+    margin: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+.skillsTableMobile {
+  display:none;
+}
+}
+
+#experienceDropdownButton {
+  border: solid 1px blue;
+  padding: 8px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  background: blue;
+  text-align: center;
+}
+
+.experienceDropdownSection {
+  justify-content: center;
+  display: flex;
+  gap: 8px;
+}
+
+.experienceDropdown {
+  border-radius: 16px;
+  background: aliceblue;
+  border: solid 2px;
+  padding: 8px;
+}
+
+@media (max-width: 550px) {
+.experienceDropdownSection {
+  flex-direction: column;
+}
+}
+
+/* Layout + spacing for the summary row */
+details.skillsTableMobile > summary.mobileSkillParent{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  /* move your border/padding/radius styles here (NOT on details) */
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 16px;
+  margin: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Remove the default marker (all major browsers) */
+details.skillsTableMobile > summary.mobileSkillParent::-webkit-details-marker{
+  display: none;
+}
+details.skillsTableMobile > summary.mobileSkillParent::marker{
+  content: "";
+}
+
+/* Add your own arrow on the right */
+details.skillsTableMobile > summary.mobileSkillParent::after{
+  content: "▾";
+  margin-left: 12px;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when open */
+details.skillsTableMobile[open] > summary.mobileSkillParent::after{
+  transform: rotate(180deg);
+}
